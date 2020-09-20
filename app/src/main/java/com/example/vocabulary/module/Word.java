@@ -8,14 +8,7 @@ package com.example.vocabulary.module;
 public class Word {
     private String english;
     private String chineseInterpretation;
-
-    public Word() {
-    }
-
-    public Word(String english, String chineseInterpretation) {
-        this.english = english;
-        this.chineseInterpretation = chineseInterpretation;
-    }
+    private int id;
 
     public String getEnglish() {
         return english;
@@ -31,5 +24,13 @@ public class Word {
 
     public void setChineseInterpretation(String chineseInterpretation) {
         this.chineseInterpretation = chineseInterpretation;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
