@@ -2,6 +2,8 @@ package com.example.vocabulary;
 
 import android.os.Bundle;
 
+import com.example.vocabulary.module.Word;
+import com.example.vocabulary.util.WordManager;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -11,6 +13,9 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
+
+import org.litepal.LitePal;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,8 +30,14 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+//                LitePal.getDatabase();
+                Word newWord = new Word();
+//                newWord.setEnglish("Hello");
+//                newWord.setChineseInterpretation("嗨");
+//                WordManager.updateWord(newWord, 1);
+//                WordManager.addWord(newWord);
+
+                Toast.makeText(MainActivity.this, WordManager.getWordById(1).getId(), Toast.LENGTH_LONG).show();
             }
         });
     }

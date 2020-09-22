@@ -1,13 +1,21 @@
 package com.example.vocabulary.module;
 
+import org.litepal.annotation.Column;
+import org.litepal.crud.LitePalSupport;
+
 /**
  * @author 软工1801温蟾圆
  *
  * 单词实体类
  */
-public class Word {
+public class Word extends LitePalSupport {
+    @Column(nullable = false, unique = true)
     private String english;
+
+    @Column(nullable = false)
     private String chineseInterpretation;
+
+    @Column(nullable = false)
     private int id;
 
     public String getEnglish() {
