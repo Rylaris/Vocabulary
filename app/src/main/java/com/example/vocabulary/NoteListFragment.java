@@ -4,9 +4,6 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +11,12 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import com.example.vocabulary.util.MyAdapter;
+import com.example.vocabulary.util.MyDBOpenHelper;
 
 import java.util.ArrayList;
 
@@ -64,7 +66,7 @@ public class NoteListFragment extends Fragment {
         listView = view.findViewById(R.id.main_list);
         mAdapter = new MyAdapter<Item>(itemList, R.layout.list_item) {
             @Override
-            public void bindView(ViewHolder holder, Item obj) {
+            public void bindView(MyAdapter.ViewHolder holder, Item obj) {
                 holder.setText(R.id.item_content, obj.getContent());
                 holder.setText(R.id.item_time, obj.getTime());
             }
